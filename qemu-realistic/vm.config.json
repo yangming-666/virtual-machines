@@ -1,0 +1,78 @@
+{
+  "vm": {
+    "name": "RealPC-01",
+    "basePath": "D:\\VMRealPC",
+    "diskPath": "D:\\VMRealPC\\RealPC-01.qcow2",
+    "isoPath": ""
+  },
+  "hardware": {
+    "cpuCount": 6,
+    "memoryMB": 8192,
+    "diskSize": "120G",
+    "machine": "q35",
+    "accelerator": "whpx",
+    "cpuModel": "EPYC-v3,hypervisor=off",
+    "networkModel": "e1000e",
+    "macAddress": "50:7B:9D:35:42:18",
+    "diskModel": "WDC WD10EZEX-08WN4A0",
+    "diskSerial": "WD-WX62D9147352",
+    "cdromModel": "ASUS DRW-24D5MT",
+    "cdromSerial": "ASUS-DRW-24D5MT"
+  },
+  "network": {
+    "sshHostPort": 2222
+  },
+  "smbios": {
+    "bios": {
+      "vendor": "American Megatrends International LLC.",
+      "version": "2413",
+      "date": "02/21/2024"
+    },
+    "system": {
+      "manufacturer": "ASUSTeK COMPUTER INC.",
+      "product": "TUF Gaming Desktop",
+      "version": "1.0",
+      "serial": "M7N0CX123456789",
+      "uuid": "8f8e3d4f-3d2e-4aa8-b97c-83e3f7b130c9",
+      "sku": "TUF-B650M-PLUS-001",
+      "family": "TUF Gaming"
+    },
+    "baseboard": {
+      "manufacturer": "ASUSTeK COMPUTER INC.",
+      "product": "TUF GAMING B650M-PLUS",
+      "version": "Rev 1.xx",
+      "serial": "230812345600123",
+      "asset": "Default string",
+      "location": "Default string"
+    },
+    "chassis": {
+      "manufacturer": "ASUSTeK COMPUTER INC.",
+      "version": "Default string",
+      "serial": "C2Z0CX123456789",
+      "asset": "Default string",
+      "type": 3
+    }
+  },
+  "boot": {
+    "useUefiIfAvailable": true,
+    "firmwareCodePath": "",
+    "firmwareVarsPath": "D:\\VMRealPC\\OVMF_VARS.fd",
+    "bootMenu": true
+  },
+  "display": {
+    "vga": "std",
+    "spice": false
+  },
+  "cloudImage": {
+    "imageUrl": "https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img",
+    "sha256Url": "https://cloud-images.ubuntu.com/noble/current/SHA256SUMS",
+    "cacheDirectory": "D:\\\u865a\u62df\u673a\\qemu-realistic\\cache",
+    "seedDirectory": "D:\\VMRealPC\\cloud-init",
+    "seedIsoPath": "D:\\VMRealPC\\seed.iso",
+    "httpPort": 8000,
+    "sshUser": "codex",
+    "sshPassword": "codex123",
+    "sshKeyPath": "D:\\VMRealPC\\ssh\\id_ed25519",
+    "preparedMarker": "D:\\VMRealPC\\.ubuntu-cloud-prepared"
+  }
+}

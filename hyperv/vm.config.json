@@ -1,0 +1,41 @@
+{
+  "vm": {
+    "name": "DevLab-01",
+    "generation": 2,
+    "basePath": "D:\\\u865a\u62df\u673a\\HyperVLab",
+    "notes": "Created from D:\\\u865a\u62df\u673a\\hyperv\\vm.config.json"
+  },
+  "hardware": {
+    "cpuCount": 6,
+    "memoryStartup": "8GB",
+    "dynamicMemory": true,
+    "memoryMinimum": "4GB",
+    "memoryMaximum": "16GB",
+    "diskSize": "120GB",
+    "enableNestedVirtualization": true
+  },
+  "network": {
+    "switchName": "Default Switch",
+    "switchTypeIfCreated": "Internal",
+    "createSwitchIfMissing": false,
+    "macAddress": "00155D010101"
+  },
+  "boot": {
+    "isoPath": "",
+    "secureBoot": true,
+    "secureBootTemplate": "MicrosoftUEFICertificateAuthority"
+  },
+  "runtime": {
+    "checkpointType": "Production",
+    "automaticStartAction": "Nothing",
+    "automaticStopAction": "Save",
+    "startAfterCreate": false,
+    "openConsoleAfterCreate": false
+  },
+  "hostHardware": {
+    "manifestPath": "D:\\\u865a\u62df\u673a\\hyperv\\guest-payload\\host-hardware.json",
+    "payloadDirectory": "D:\\\u865a\u62df\u673a\\hyperv\\guest-payload",
+    "dataDiskPath": "D:\\\u865a\u62df\u673a\\HyperVLab\\HostHardwarePayload.vhdx",
+    "attachDataDiskIfPresent": true
+  }
+}

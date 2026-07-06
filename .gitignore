@@ -1,0 +1,18 @@
+# Ignore virtual machine images and disk files
+*.img
+*.iso
+*.vhdx
+*.vhd
+*.qcow2
+*.qcow
+*.vdi
+*.vmdk
+
+# Ignore caches and temporary folders
+**/cache/
+**/tmp/
+.agent/
+
+# OS metadata
+.DS_Store
+Thumbs.db
