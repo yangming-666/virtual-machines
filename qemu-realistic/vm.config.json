@@ -20,7 +20,8 @@
     "cdromSerial": "ASUS-DRW-24D5MT"
   },
   "network": {
-    "sshHostPort": 2222
+    "sshHostPort": 2222,
+    "rdpHostPort": 3390
   },
   "smbios": {
     "bios": {

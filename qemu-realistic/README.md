@@ -3,7 +3,7 @@
 This setup creates a VM whose guest-visible hardware identity is configured to look like a normal desktop PC:
 
 - SMBIOS BIOS/system/baseboard/chassis fields are set from `vm.config.json`.
-- CPU uses QEMU `-cpu max` so WHPX exposes as much host CPU detail as it can.
+- CPU uses the configured `EPYC-v3,hypervisor=off` profile so the guest gets a stable CPU identity and does not expose the Linux `hypervisor` CPU flag.
 - Disk is attached through SATA AHCI with a fixed disk serial.
 - Network uses an Intel `e1000e` model with a fixed locally chosen MAC address.
 - Q35 chipset is used instead of the older i440fx machine type.
@@ -48,6 +48,22 @@ ssh -i 'D:\VMRealPC\ssh\id_ed25519' -p 2222 codex@127.0.0.1
 ```
 
 Default credentials are `codex` / `codex123`. The SSH key is preferred.
+
+## Steam Graphical Test Environment
+
+Install XFCE, XRDP, 32-bit graphics libraries, and the Steam launcher inside the guest:
+
+```powershell
+.\Setup-SteamGraphicalGuest.ps1
+```
+
+Restart the VM so QEMU applies the RDP port forward, then connect with Windows Remote Desktop:
+
+```powershell
+mstsc /v:127.0.0.1:3390
+```
+
+Log in as `codex` / `codex123`, then launch Steam from the desktop or with `steam`.
 
 You can also set or change the installer ISO later:
 

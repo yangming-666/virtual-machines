@@ -212,6 +212,9 @@ $netdev = 'user,id=net0'
 if ($config.network -and $config.network.sshHostPort) {
     $netdev = "$netdev,hostfwd=tcp::$([int]$config.network.sshHostPort)-:22"
 }
+if ($config.network -and $config.network.rdpHostPort) {
+    $netdev = "$netdev,hostfwd=tcp::$([int]$config.network.rdpHostPort)-:3389"
+}
 $args.Add('-netdev'); $args.Add($netdev)
 $args.Add('-device'); $args.Add("$($config.hardware.networkModel),netdev=net0,mac=$($config.hardware.macAddress)")
 if ($Headless) {

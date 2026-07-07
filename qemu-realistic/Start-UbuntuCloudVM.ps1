@@ -18,18 +18,15 @@ $scriptRoot = Split-Path -Parent $ConfigPath
 $config = Get-Content -LiteralPath $ConfigPath -Raw | ConvertFrom-Json
 $basePath = [System.IO.Path]::GetFullPath([string]$config.vm.basePath)
 $qemuPidFile = Join-Path $basePath 'qemu.pid'
-$seedUrl = "http://10.0.2.2:$([int]$config.cloudImage.httpPort)/"
-
-if ($Provision) {
-    & (Join-Path $scriptRoot 'New-CloudInitIso.ps1') -ConfigPath $ConfigPath
-    $startArgs.AttachSeedIso = $true
-}
-
 $startArgs = @{
     ConfigPath = $ConfigPath
     Headless = $true
     Detached = $true
     PidFile = $qemuPidFile
+}
+if ($Provision) {
+    & (Join-Path $scriptRoot 'New-CloudInitIso.ps1') -ConfigPath $ConfigPath
+    $startArgs.AttachSeedIso = $true
 }
 if (-not $UseAcceleration) {
     $startArgs.NoAcceleration = $true
